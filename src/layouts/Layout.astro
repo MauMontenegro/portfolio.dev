@@ -1,0 +1,55 @@
+---
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { description, title } = Astro.props;
+
+import '@fontsource-variable/nunito';
+
+import Header from '../components/header.astro';
+import Footer from '../components/Footer.astro'
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>		
+		<Header />
+		<slot />
+		<Footer />
+		<div class="fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#14213D_10%,#000000_100%)]"></div>
+	</body>
+</html>
+<style is:global>
+	:root {
+		color-scheme: light dark;
+	}
+	html {		
+		font-family: 'Nunito Variable',sans-serif;		
+		color: azure;
+		scroll-behavior: smooth;
+	}
+
+	body{		
+		display:flex;
+		flex-direction: column;			
+		min-height: 100vh;
+		background: white;		
+	}
+
+	@media (prefers-reduced-motion:reduce){
+		html{
+			scroll-behavior: auto;
+		}
+	}
+	
+</style>

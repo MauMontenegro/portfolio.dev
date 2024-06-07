@@ -1,0 +1,35 @@
+---
+import PublicationItems from "./PublicationItems.astro";
+
+// Timeline.astro
+const publications = [ 
+  {
+    title: "A gentle and rigorous introduction to reinforcement learning.",
+    date:"2023",
+    description:"In this paper, we will address a computational approach called Reinforcement Learning(RL) and we build in a progressive and simple way its mathematical basis,as well as its main solution methods.",
+    link:"http://recibe.cucei.udg.mx/index.php/ReCIBE/article/view/268/190",
+  },
+  {
+    title: "The Moving Firefighter Problem",
+    date: "2022",
+    description: "A generalization of the firefighter problem where the time it takes a firefighter to move from a vertex u to defend vertex v is determined by a function 𝜏 . This new formulation models situations such as a wildfire or a flood, where firefighters have to physically move from their current position to the location of an entity they intend to defend.",
+    link:"https://www.mdpi.com/2227-7390/11/1/179#metrics",
+  },
+  {
+    title: " A Parallel Rollout Algorithm for Wildfire Supression.",
+    date: "2020",
+    description: "In this paper, we formulate the problem of optimal Wildfire Suppression as an infinite horizon Decision Process (DP) problem where an agent (e.g., a robotic firefighter) decides which areas to intervene to extinguish the fire. The dynamics of the wildfire is modeled by a cellular automaton.",
+    link: "https://link.springer.com/chapter/10.1007/978-3-030-62554-2_18"
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
+    {
+        publications.map(publication => (
+        <li class="mb-10 ms-4">
+            <PublicationItems {... publication} />
+        </li>
+        ))                  
+    }
+</ol>

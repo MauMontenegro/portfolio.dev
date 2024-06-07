@@ -1,0 +1,67 @@
+---
+import GitHub from './icons/GitHub.astro'
+import PythonIcon from './icons/PythonIcon.astro'
+import SocialPill from './icons/SocialPill.astro'
+
+const TAGS={
+    Python:{
+        name:"Python",
+        class: "bg-[#5FA8D3] text-[#000000] font-semibold",
+        icon: PythonIcon,
+}}
+
+const PROJECTS =[
+{
+    title: 'Moving Firefighter Problem Instance Generator',
+    description: 'A graph and instance generator for the MFP. It includes an interface to generate arbitrary instances to run experiments. It also includes log files with stadistic reports.',
+    link: 'https://github.com/MauMontenegro/mfpgen',
+    image: '/Projects/mfpgen.webp',
+    tags:[TAGS.Python],
+},
+{
+    title: 'Dynamic Programming for the MFP',
+    description: 'Dynaff is an interface which solves the MFP problem via Dynamic Programming and compares with two Greedy Heuristics. It also produces comparative charts about performance.',
+    link: 'https://github.com/MauMontenegro/dynaff',
+    image: '/Projects/dynaff.webp',
+    tags:[TAGS.Python],
+}
+]
+---
+<div class="flex flex-wrap gap-8">
+{
+    PROJECTS.map(project =>(
+        <article class="w-full sm:w-[400px] md:w-[350px] lg:w-[350px] justify-between p-4 mt-5">            
+                <img class="rounded-xl pb-4
+                            transition-all duration-300
+                            cursor-pointer filter grayscale hover:grayscale-0"
+                    src={project.image} alt={project.title}>
+                <h3 class="text-2xl font-semibold text-blue-500 pb-2">{project.title}</h3>
+                
+                <ul class="flex gap-x-4 flex-row items-center justify-start">
+                    {
+                        project.tags.map(tag =>(
+                            <li>
+                                <span class={`flex rounded-full text-xs ${tag.class} items-center py-0 pr-2 mb-2`}>
+                                    <tag.icon class="size-6"/>
+                                    {tag.name}
+                                </span>
+                            </li>
+                        ))   
+                    }
+                </ul>                
+
+                <p class="mb-4 text-pretty text-white/70 text-sm">
+                    {project.description}
+                </p>   
+
+                <span class="flex ">
+                    <SocialPill href={project.link}>
+								<GitHub class="size-2 lg:size-4"/>
+								<span class="sm:text-sm">Code</span>
+					</SocialPill>	
+                </span>             
+            
+        </article>
+    ))
+}
+</div>

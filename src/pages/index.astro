@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Badge from  '../components/Badge.astro';
+import LinkedIn from '../components/icons/LinkedIn.astro';
+import GitHub from '../components/icons/GitHub.astro';
+import SocialPill from '../components/icons/SocialPill.astro'
+import Experience from '../components/Experience.astro';
+import SectionContainer from '../components/SectionContainer.astro'
+import Briefcase from '../components/icons/Briefcase.astro';
+import CodeIcon from '../components/icons/CodeIcon.astro';
+import Projects from '../components/Projects.astro';
+import Publications from '../components/Publications.astro';
+import PubIcon from '../components/icons/PubIcon.astro';
+---
+
+<Layout 
+	title="Mauro Montenegro Portfolio - Developer, Programmer and Data Scientist" 
+	description="Hire Mauro Montenegro to develop backend infrastructure for your website and develop data science and machine learning apps">
+	<main class="px-4">
+		<SectionContainer class="py-44 pb-20">
+			<div class="grid grid-cols-4 gap-4 items-center">	
+				<div class="col-span-3">
+					<span class="text-xl pb-2 opacity-70">Hello!, i'm</span>			
+					<h1 class="text-[#FCA311] text-3xl md:text-4xl lg:text-5xl font-bold lg:pb-5">
+						Mauro Montenegro 											
+					</h1>
+				
+					<h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+						<span class="text-yellow-100">MSc. Data Scientist</span> & <span class="text-yellow-100">Web Developer</span><br>
+						<span class="font-extralight ">Specialized in Backend development and Machine Learning algorithms</span>				
+					</h2>
+
+					<ul class="flex flex-wrap gap-4 pt-5">
+						<li>
+							<SocialPill href="https://www.linkedin.com/in/mmontenegromeza/">
+								<LinkedIn class="size-4 lg:size-5"/>
+								LinkedIn
+							</SocialPill>				
+						</li>
+						<li>
+							<SocialPill href="https://github.com/MauMontenegro">
+								<GitHub class="size-4 lg:size-5"/>
+								GitHub
+							</SocialPill>	
+						</li>
+					</ul>	
+				</div>
+				
+				<div>
+					<img class="rounded-full size-70" 
+					src="https://media.licdn.com/dms/image/D4E03AQGvGQLP_l8bYA/profile-displayphoto-shrink_200_200/0/1712606239361?e=2147483647&v=beta&t=pylYYulnT3uLv1palDAYmGRLULTRrW1txaUjYhNhwSY"
+					alt="Portfolio Author"/>
+						
+					<a 
+							href="https://www.linkedin.com/in/mmontenegromeza/"
+							target="_blank"
+							rel="noopener"
+							class="flex justify-center items-center pt-5 hover:scale-110 transition font-semibold">
+							<Badge>Available for Work</Badge>
+						</a>
+				</div>			
+			</div>
+		</SectionContainer>
+
+		<SectionContainer id="experience">
+			<h2 class="text-3xl font-semibold mg-6 flex gap-x-2 items-center text-white">
+				<Briefcase class="size-6" />
+				Work Experience</h2>
+			<Experience />
+		</SectionContainer>
+
+		<SectionContainer id="projects">
+			<h2 class="text-3xl font-semibold mg-6 flex gap-x-2 items-center text-white">
+				<CodeIcon class="size-6" />
+				Projects</h2>
+			<Projects />
+		</SectionContainer >
+
+		<SectionContainer id="publications">
+			<h2 class="text-3xl font-semibold mg-6 flex gap-x-2 items-center text-white">
+				<PubIcon class="size-6" />
+				Publications</h2>
+			<Publications />
+		</SectionContainer>
+		
+	</main>
+</Layout>

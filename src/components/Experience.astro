@@ -1,0 +1,29 @@
+
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCE=[
+{
+    date: '2021-2023',
+    title: 'Machine Learning Consultor - CIC IPN',
+    description: " Developed and managed a cutting-edge Machine Learning for Industry curriculum with Python ML libraries, integrating the latest advancements in on-demand technologies while maintaining strong mathematical and statistical underpinnings",
+    
+},
+{
+    date: '2014-2015',
+    title: 'Data Analyst and Design Engineer - RICE Propulsion',
+    description: 'Applied advanced mathematical and statistical modeling techniques to design, simulate, and optimize complex mechanical components for marine thrusters and mining machinery, ensuring optimal performance and durability.',
+    
+}
+]
+---
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
+    {
+        EXPERIENCE.map(experience => (
+        <li class="mb-10 ms-4">
+            <ExperienceItem {... experience} />
+        </li>
+        ))                  
+    }
+</ol>
+
